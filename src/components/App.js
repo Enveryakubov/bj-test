@@ -42,7 +42,6 @@ const App = () => {
                 <Route path="/edit/:id" exact component={TaskEditForm}/>
                 <Route path="/create" exact component={TaskCreate}/>
                 <Route path="/login" exact component={LoginForm}/>
-                <Route path="/" component={Custom404}/>
             </Switch>
         </Router>
     )
