@@ -1,6 +1,6 @@
 {
-  "name": "bj-test",
   "homepage": "http://enveryakubov.github.io/bj-test",
+  "name": "bj-test",
   "version": "0.1.0", 
   "private": true,
   "dependencies": {
