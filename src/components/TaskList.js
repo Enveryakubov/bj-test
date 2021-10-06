@@ -33,13 +33,11 @@ const TaskList = () => {
     const loading = useSelector(state => state.tasks.loading)
     
 
-    
-
     useEffect(() => {
         dispatch(fetchTasks(currentPage, order, field))
     },[currentPage, field, order, dispatch])
 
-    
+
     if (loading){
         return (
            <div className="rightSide rightSide--bg-grey">
@@ -61,9 +59,9 @@ const TaskList = () => {
             {tasks.map(task =>
             <div key={task.id} className="task taskList__item">
                 <p className="task__item "><strong>Имя:</strong> {capitalize(task.username)}</p>
-                <p className="task__item"><strong>E-почта:</strong> {capitalize(task.email)}</p>
+                <p className="task__item"><strong>E-почта:</strong> {task.email.toLowerCase()}</p>
                 <p className="task__item"><strong>Задача: </strong>{capitalize(task.text)}</p>
-                <p className="task__item"><strong>Статус: </strong>{statusConfig(task.status)}</p>
+                <p className="task__item"><strong>Статус: </strong>{capitalize(statusConfig(task.status))}</p>
                 {auth &&
                 <Link to={`/edit/${task.id}`}>
                 <div className="task__button-center">

@@ -125,8 +125,6 @@ export default combineReducers({
     tasks: tasksReducer,
     auth: authReducer,
     alert:alertReducer,
-    // visible: visibilityReducer,
     currentPage:paginationReducer,
     search: searchReducer
-
 })

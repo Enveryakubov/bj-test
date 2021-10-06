@@ -6,7 +6,7 @@ const Alert = () => {
     const alert = useSelector(state => state.alert)
   
     return (
-        <div className="alert ml-100">
+        <div className="alert rightSide">
           <p>{alert}</p>  
         </div>
     )

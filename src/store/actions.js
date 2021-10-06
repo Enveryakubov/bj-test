@@ -35,7 +35,6 @@ export const fetchTasks = (pageNum=1, sortDirection, sortField) => {
             .then(res => {
                 dispatch({type:GET_TASKS, payload:res.data.message.tasks})
                 dispatch({type:GET_TASK_COUNT, payload:res.data.message.total_task_count})})
-                // dispatch(setLoading(false))
     }
 }
 
@@ -100,7 +99,6 @@ export const logIn = (username, password) => {
         dispatch({type:LOG_IN, payload: res.data.message.token})
         Cookies.set("admin", true, { expires: 1 })
         Cookies.set("token", res.data.message.token,{ expires: 1 } )
-        window.location.href = '/';
     })
 }}
 

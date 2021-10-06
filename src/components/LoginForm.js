@@ -1,21 +1,24 @@
 
 import { useInput } from '../hooks/customHooks'
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { logIn} from '../store/actions'
-
-
-
+import {Redirect} from "react-router-dom"
 
 
 const LoginForm = () => {
     const dispatch = useDispatch()
+    const auth = useSelector(state => state.auth.auth)
 
     const username = useInput("")
     const password = useInput("")
 
     const onSubmit = (event) => {
         event.preventDefault()
-        dispatch(logIn(username.value, password.value))  
+        dispatch(logIn(username.value, password.value)) 
+    }
+    
+    if (auth){
+        return <Redirect to={"/"}/>
     }
 
     return (
