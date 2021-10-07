@@ -9,8 +9,6 @@ import Pagination from './Pagination'
 import Search from './Search'
 
 
-
-
 const TaskList = () => {
     const auth = useSelector(state => state.auth.auth)
 
@@ -33,12 +31,13 @@ const TaskList = () => {
     const loading = useSelector(state => state.tasks.loading)
     
 
+
     useEffect(() => {
         dispatch(fetchTasks(currentPage, order, field))
     },[currentPage, field, order, dispatch])
 
 
-    if (loading){
+    if (loading && (tasks.length === 0)){
         return (
            <div className="rightSide rightSide--bg-grey">
                <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>

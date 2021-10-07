@@ -15,13 +15,10 @@ import { useSelector, useDispatch } from "react-redux"
 import { LOG_IN } from "../store/types"
 
 
-
-
-
-
 const App = () => {
     const alert = useSelector(state => state.alert)
     const dispatch = useDispatch()
+
 
     const readCookies = () => {
         const token = Cookies.get("token")
@@ -38,7 +35,9 @@ const App = () => {
             {alert ? <Alert/>: null}
             <Nav/>
             <Switch>
-                <Route path="/" exact component={TaskList}/>
+                <Route path="/" exact>
+                    <TaskList/>
+                </Route>
                 <Route path="/edit/:id" exact component={TaskEditForm}/>
                 <Route path="/create" exact component={TaskCreate}/>
                 <Route path="/login" exact component={LoginForm}/>

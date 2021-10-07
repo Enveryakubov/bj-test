@@ -1,6 +1,6 @@
 {
   "name": "bj-test",
-  "version": "0.1.0", 
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -9,6 +9,7 @@
     "axios": "^0.22.0",
     "dompurify": "^2.3.3",
     "form-data": "^4.0.0",
+    "history": "^5.0.1",
     "js-cookie": "^3.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
