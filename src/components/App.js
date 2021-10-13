@@ -19,16 +19,14 @@ const App = () => {
     const alert = useSelector(state => state.alert)
     const dispatch = useDispatch()
 
-
-    const readCookies = () => {
+    useEffect(() => {
         const token = Cookies.get("token")
         if (token) {
             dispatch({type:LOG_IN, payload:token})
         }
-    }
-    useEffect(() => {
-        readCookies()
-    })
+        console.log("cook")
+    },[dispatch])
+
     return (
         <div className="app">
         <Router>

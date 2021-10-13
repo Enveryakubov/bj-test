@@ -23,17 +23,14 @@ const TaskList = () => {
     }
 
     const dispatch = useDispatch()
-    let tasks = useSelector(state => state.tasks.tasks)
-    const totalTaskCount = useSelector(state => state.tasks.totalTasks)
+    const {totalTasks, tasks, loading} = useSelector(state => state.tasks)
     const currentPage = useSelector(state => state.currentPage)
-    const field = useSelector(state => state.search.field)
-    const order = useSelector(state => state.search.order)
-    const loading = useSelector(state => state.tasks.loading)
+    const {field, order} = useSelector(state => state.search)
+   
     
-
-
     useEffect(() => {
         dispatch(fetchTasks(currentPage, order, field))
+        console.log("List rendered")
     },[currentPage, field, order, dispatch])
 
 
@@ -70,7 +67,7 @@ const TaskList = () => {
             </div>
             )}
             <Pagination 
-                totalTasks={totalTaskCount}
+                totalTasks={totalTasks}
                 currentPage={currentPage}
                  />
         </div>
